@@ -36,26 +36,13 @@ function server_callback(port){
 //POST data to the server
 app.post('/all',postWeather);
 function postWeather(req,res){
- /* newEntry={
-      Temperature:req.body.Temp,
-      Date:req.body.date,
-      feelings:req.body.feeling
-      
-  }*/
-
-  //projectData=newEntry;
   projectData['Temperature']=req.body.Temp;
-  console.log(projectData.Temperature);
   projectData['Date']=req.body.date;
   projectData['feelings']=req.body.feeling;
-  console.log(projectData);
-  res.send(projectData);
-  
 }
 
 //update UI
-app.get('/allData',getWeather);
+app.get('/all',getWeather);
 function getWeather(req,res){
-
    res.send(projectData);
 }
