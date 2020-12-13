@@ -21,15 +21,14 @@ Steps taken to build the weather web app:
     
 Write an async function in app.js that uses fetch() to make a GET request to the OpenWeatherMap API with the parameters:
 
-    base url
-    user entered zip code (see input in html with id zip)
-    personal API key
+ base url
+ user entered zip code (see input in html with id zip)
+ personal API key
     
                 const getData=async(baseURL,zipCode,apiKey)=>{
                 const response=await fetch(baseURL+zipCode+apiKey)
                 try {
                   const data=await response.json();
-                  console.log('Exits get API in app.js');
                   return data;
                   } catch (error) {
                         console.log(error);  
